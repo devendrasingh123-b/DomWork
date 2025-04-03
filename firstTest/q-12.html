@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+
+
+<ul>
+    <li>itemone</li>
+    <li>itemtwo</li>
+    <li>itemthree</li>
+</ul>
+
+<button>Add item</button>
+
+
+
+
+
+
+
+</body>
+</html>
+
+<script>
+
+let add=document.querySelector("button")
+add.addEventListener("click",c)
+
+
+let bag=true;
+
+function c(){
+
+    
+let li=document.createElement("li")
+li.innerText="New item"
+
+let ul=document.querySelector("ul")
+if(bag){
+    
+    li.style.color="blue"
+ ul.append(li)
+ bag=false
+ console.log(bag)
+}else{
+
+li.style.color="red"
+ul.append(li)
+
+            bag=true
+}
+
+}
+//console.log(add)
+
+</script>
