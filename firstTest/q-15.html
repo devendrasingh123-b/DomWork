@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+
+h4{
+    background-color: yellow;
+    padding: 20px;
+    text-align: center;
+
+}
+
+#container{
+
+width: 100%;
+display: flex;
+flex-wrap: wrap;
+gap: 20px;
+
+}
+
+
+#child{
+
+width: 25%;
+height:150px ;
+border: 2px solid red;
+border-radius: 5px;
+
+}
+
+    </style>
+</head>
+<body>
+    
+<h4>To- Do List </h4>
+
+
+<div id="container"> 
+
+<div id="child">
+
+
+
+</div>
+
+</div>
+
+<label for="task">add your task</label>
+<input type="text" id="task">
+<button id="addbtn">add task</button>
+
+
+</body>
+</html>
+<script>
+let addbtn=document.getElementById("addbtn")
+addbtn.addEventListener("click",addtext)
+
+function addtext(){
+    let input=document.getElementById("task").value
+    
+    if(input==""){
+        alert("please write something")
+    }else{
+    
+    let delet = document.createElement("button")
+    let complete=document.createElement("button")
+   delet.innerText="deletebtn"
+   complete.innerText="complete"
+   
+    let p=document.createElement("p")
+        p.innerText=input;
+    let container=document.getElementById("container")
+    let child=document.getElementById("child")
+    child.append(p,delet,complete)
+    container.append(child)
+}
+
+
+
+    
+}
+
+
+
+
+</script>

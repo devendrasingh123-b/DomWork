@@ -10,7 +10,6 @@
 div{
     height: 150px;
     width:160px;
-    background-color: lightsalmon;
 }
 
     </style>
@@ -20,30 +19,68 @@ div{
 <label for="first">colorName</label>
 <input type="text" id="first">
 <br><br>
-    <label for="textcontent">textcontent</label>
-   <input type="text" id="textcontent">
+<label for="textcontent">textcontent</label>
+<input type="text" id="textcontent">
 
 
-   <br><br>
+<br><br>
    <hr>
-<button>Change Background</button>
+
+<button id="color">Change Background</button>
 <br>
 <br>
-<button>Upade Text</button>
-
-
+<button id="textbtn">Upade Text</button>
 <hr>
-
-
-<div>
-
-
-
-</div>
+<div id="div"> </div>
 </body>
 </html>
 
 <script>
+
+
+let btntwo=document.getElementById("textbtn")
+btntwo.addEventListener("click",a)
+
+function a(){
+    let inputtwo=document.getElementById("textcontent").value
+     
+    let div=document.getElementById("div")
+    div.innerText=""
+
+    if(inputtwo==""){
+        alert("Please enter some text!")
+    }else{
+        div.innerText=inputtwo
+    }
+
+
+
+
+}
+
+
+
+let btnone=document.getElementById("color")
+btnone.addEventListener("click",f)
+function f(){
+    
+    let text=document.getElementById("first").value;
+    let div=document.getElementById("div")
+         div.style.backgroundColor=""
+if(text==""){
+    alert("color input is emty ")
+}else{
+ div.style.backgroundColor=text
+
+ if(div.style.backgroundColor==""){
+    alert("please put real color name ")
+ }else{
+    console.log(text)
+ }
+}
+
+}
+
 
 
 </script>
